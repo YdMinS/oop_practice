@@ -18,4 +18,11 @@ public class PasswordValidatorTest {
         assertThatCode(() -> PasswordValidator.validate("pass12345"))
                 .doesNotThrowAnyException();
     }
+
+    @DisplayName("비밀번호가 8자 미만 12자 초가면 IllegalArgumentException 예외가 발생한다.")
+    @Test
+    void validatePasswordTest2() {
+        assertThatCode(()->PasswordValidator.validate("111")).isInstanceOf(IllegalArgumentException.class);
+        assertThatCode(()->PasswordValidator.validate("1aw31241515151")).isInstanceOf(IllegalArgumentException.class);
+    }
 }
