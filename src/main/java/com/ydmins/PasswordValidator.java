@@ -1,4 +1,4 @@
-package org.example;
+package com.ydmins;
 
 public class PasswordValidator {
 
