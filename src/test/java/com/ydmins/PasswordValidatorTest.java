@@ -25,6 +25,7 @@ public class PasswordValidatorTest {
     @ParameterizedTest
     @ValueSource(strings = {"115ah!d", "12gns93#1m3k3"})
     void validatePasswordTest2(String password) {
-        assertThatCode(()->PasswordValidator.validate(password)).isInstanceOf(IllegalArgumentException.class);
+        assertThatCode(()->PasswordValidator.validate(password)).isInstanceOf(IllegalArgumentException.class)
+                .hasMessage("비밀번호는 최소 8자 이상 12자 이하여야 한다.");
     }
 }
